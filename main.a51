@@ -1,7 +1,7 @@
 RS 		EQU 	P1.0
 RW 		EQU 	P1.1
 E  		EQU 	P1.2
-DBUS 	EQU 	P1
+DBUS 	EQU 	P2
 CONT 	EQU 	R0
 
 
