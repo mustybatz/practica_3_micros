@@ -32,10 +32,15 @@ WRITE_TO_DP:	ACALL 	ESPERA  ; Espera a que el LCD este libre
                 SETB 	RS		; Prepara comando para salida
                 ACALL 	SALIDA 	; Envia comando para salida
                 RET
-
+                
+CURSOR_RIGHT:   MOV 	A, #14H ; Mueve cursor a la derecha
+                ACALL 	ESPERA  ; Espera a que el LCD este libre
+                CLR 	RS		; Prepara comando para salida
+                ACALL 	SALIDA 	; Envia el comando
+                RET
 
 ; Funcion para colocar el cursor en la segunda linea
-CURSOR:			MOV 	A, #C0H ; Comando para colocar cursor en segunda linea
+JMP_LINE:		MOV 	A, #C0H ; Comando para colocar cursor en segunda linea
                 ACALL 	ESPERA  ; Espera a que el LCD este libre
                 CLR 	RS		; Prepara comando para salida
                 ACALL 	SALIDA 	; Envia comando para salida
