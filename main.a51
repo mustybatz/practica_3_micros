@@ -40,11 +40,11 @@ CURSOR_RIGHT:   MOV 	A, #14H ; Mueve cursor a la derecha
                 RET
 
 ; Funcion para colocar el cursor en la segunda linea
-JMP_LINE:		MOV 	A, #C0H ; Comando para colocar cursor en segunda linea
-                ACALL 	ESPERA  ; Espera a que el LCD este libre
-                CLR 	RS		; Prepara comando para salida
-                ACALL 	SALIDA 	; Envia comando para salida
-                RET
+LINE_JUMP:		MOV		A, #0C0H
+				ACALL 	ESPERA
+				CLR		RS
+				ACALL	SALIDA
+				RET
 
 ; Funcion para limpia la pantalla LCD y coloca el cursor en la primera linea
 CLEAR_CURSOR:	MOV 	A, #01H ; Comando para limpiar pantalla
